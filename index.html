@@ -25,6 +25,11 @@
             background-color: white;
             scroll-behavior: smooth;
         }
+        /* FIX for Mobile Zoom/Overflow Issue */
+        html {
+            overflow-x: hidden;
+        }
+        
         .container {
             width: 90%;
             max-width: 1200px;
@@ -46,7 +51,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap; /* Allows wrapping for mobile */
+            flex-wrap: wrap;
         }
         header h1 {
             font-size: 1.5em; 
@@ -173,8 +178,15 @@
             margin: 0 auto 40px;
             font-size: 1.1em;
         }
-        .skills-table {
+        
+        /* FIX: Table Wrapper for Mobile Scrolling */
+        .table-wrapper {
+            overflow-x: auto; /* Allows horizontal scrolling */
+            -webkit-overflow-scrolling: touch; /* Improves scrolling on iOS */
             width: 100%;
+        }
+        .skills-table {
+            min-width: 500px; /* Ensure table is wide enough to scroll on mobile */
             border-collapse: collapse;
             margin-top: 20px;
         }
@@ -212,7 +224,7 @@
         /* --- MOBILE RESPONSIVE STYLES --- */
         @media (max-width: 768px) {
             header .container {
-                flex-direction: column; /* Stack header items vertically */
+                flex-direction: column; 
                 align-items: flex-start; 
             }
             header h1 {
@@ -276,32 +288,34 @@
             <p class="goal">I am actively seeking employment that provides <strong>real-world, hands-on experience</strong> in the IT field, directly building upon my Cybersecurity studies at the University of Nebraska-Omaha. My approach is to bridge theoretical knowledge with practical application, focusing on security posture improvement and efficient, agile project delivery.</p>
 
             <h3>Key Skills Snapshot</h3>
-            <table class="skills-table">
-                <thead>
-                    <tr>
-                        <th>Category</th>
-                        <th>Skills</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Cybersecurity</strong></td>
-                        <td>SIEM/SOAR Triage (Google SecOps), DLP Alerting, YARA-L Rules, Phishing/Malware Analysis, DMARC/SPF/DKIM, Malware Analysis (Cuckoo3 Sandbox), Network Configuration.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Development/Scripting</strong></td>
-                        <td>Python, Bash, YAML, Netplan, Nginx Configuration, Cloudflare API.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Infrastructure/Virtualization</strong></td>
-                        <td>VMware Workstation Pro, Ubuntu Linux, KVM/QEMU, Nested Virtualization, systemd.</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Agile/Leadership</strong></td>
-                        <td>Scrum Master, Sprint Planning, Backlog Grooming, Daily Standups, Kanban, Conversational AI Design.</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-wrapper">
+                <table class="skills-table">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Skills</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Cybersecurity</strong></td>
+                            <td>SIEM/SOAR Triage (Google SecOps), DLP Alerting, YARA-L Rules, Phishing/Malware Analysis, DMARC/SPF/DKIM, Malware Analysis (Cuckoo3 Sandbox), Network Configuration.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Development/Scripting</strong></td>
+                            <td>Python, Bash, YAML, Netplan, Nginx Configuration, Cloudflare API.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Infrastructure/Virtualization</strong></td>
+                            <td>VMware Workstation Pro, Ubuntu Linux, KVM/QEMU, Nested Virtualization, systemd.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Agile/Leadership</strong></td>
+                            <td>Scrum Master, Sprint Planning, Backlog Grooming, Daily Standups, Kanban, Conversational AI Design.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </section>
 
