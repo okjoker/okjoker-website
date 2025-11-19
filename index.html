@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaxon Bruns | Cybersecurity Professional</title>
+    <style>
+        /* --- General Styling & Reset --- */
+        :root {
+            --primary-color: #007BFF;
+            --secondary-color: #343A40;
+            --light-bg: #F8F9FA;
+            --dark-text: #212529;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            background-color: white;
+            scroll-behavior: smooth;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        header {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            padding: 5px 10px;
+            transition: color 0.3s, background-color 0.3s;
+            border-radius: 4px;
+        }
+        nav a:hover {
+            color: var(--primary-color);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* --- Section Styles --- */
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid #E9ECEF;
+        }
+        section:last-child {
+            border-bottom: none;
+        }
+        h2 {
+            font-size: 2.5em;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--primary-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* --- Hero Section --- */
+        #home {
+            background-color: var(--light-bg);
+            text-align: center;
+            padding: 100px 0;
+        }
+        #home h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+        #home p {
+            font-size: 1.5em;
+            color: #6C757D;
+            margin-bottom: 30px;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .primary-cta {
+            background-color: var(--primary-color);
+            color: white;
+            border: 2px solid var(--primary-color);
+        }
+        .secondary-cta {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+        .secondary-cta:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* --- Experience & Project Cards --- */
+        .job-card, .project-card {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--primary-color);
+            box-shadow: var(--shadow);
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        .job-card:hover, .project-card:hover {
+            transform: translateY(-5px);
+        }
+        .job-card h3, .project-card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+        .job-card h4, .project-card p.tech-stack {
+            color: var(--primary-color);
+            font-weight: normal;
+            margin-bottom: 15px;
+        }
+        .job-card ul {
+            padding-left: 20px;
+        }
+
+        /* --- About Section / Skills --- */
+        #about p.goal {
+            font-style: italic;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-size: 1.1em;
+        }
+        .skills-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .skills-table th, .skills-table td {
+            border: 1px solid #DEE2E6;
+            padding: 12px;
+            text-align: left;
+        }
+        .skills-table th {
+            background-color: var(--primary-color);
+            color: white;
+            width: 30%;
+        }
+
+        /* --- Education & Contact --- */
+        #education .entry {
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 3px solid var(--secondary-color);
+        }
+        #education h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+        #contact .contact-details {
+            text-align: center;
+            font-size: 1.2em;
+        }
+        #contact .contact-details a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+            }
+            nav {
+                margin-top: 10px;
+            }
+            nav a {
+                margin: 5px 10px;
+                display: block;
+            }
+            #home h1 {
+                font-size: 2.5em;
+            }
+            #home p {
+                font-size: 1.2em;
+            }
+            h2 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Jaxon Bruns</h1>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#education">Education</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home">
+        <div class="container">
+            <h1>Jaxon Bruns: Cybersecurity Analyst | Future-Focused IT Professional</h1>
+            <p>Cybersecurity student at UNO with hands-on experience in threat analysis, security posture hardening, agile methodologies, and full-stack project deployment.</p>
+            <a href="#experience" class="cta-button primary-cta">View My Experience</a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" class="cta-button secondary-cta">Connect on LinkedIn</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>👤 About Me</h2>
+            <p class="goal">I am actively seeking employment that provides **real-world, hands-on experience** in the IT field, directly building upon my Cybersecurity studies at the University of Nebraska-Omaha. My approach is to bridge theoretical knowledge with practical application, focusing on security posture improvement and efficient, agile project delivery.</p>
+
+            <h3>Key Skills Snapshot</h3>
+            <table class="skills-table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Skills</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>**Cybersecurity**</td>
+                        <td>SIEM/SOAR Triage (Google SecOps), DLP Alerting, YARA-L Rules, Phishing/Malware Analysis, DMARC/SPF/DKIM, Malware Analysis (Cuckoo3 Sandbox), Network Configuration.</td>
+                    </tr>
+                    <tr>
+                        <td>**Development/Scripting**</td>
+                        <td>Python, Bash, YAML, Netplan, Nginx Configuration, Cloudflare API.</td>
+                    </tr>
+                    <tr>
+                        <td>**Infrastructure/Virtualization**</td>
+                        <td>VMware Workstation Pro, Ubuntu Linux, KVM/QEMU, Nested Virtualization, systemd.</td>
+                    </tr>
+                    <tr>
+                        <td>**Agile/Leadership**</td>
+                        <td>Scrum Master, Sprint Planning, Backlog Grooming, Daily Standups, Kanban, Conversational AI Design.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2>💼 Professional Experience</h2>
+
+            <div class="job-card">
+                <h3>Werner Enterprises, Cybersecurity Analyst Intern</h3>
+                <h4>August 2025 - Present</h4>
+                <ul>
+                    <li>Analyzed user-submitted emails for **phishing, malware, and other malicious content**.</li>
+                    <li>Worked to harden the company's email security posture through the creation and refinement of **DMARC, SPF, and DKIM records** using **Python** and the **Cloudflare API**.</li>
+                    <li>Triaged and responded to alerts in **Google SecOps SOAR** utilizing **UDM queries** in the **SIEM**.</li>
+                    <li>Created and refined **YARA-L Rules** in Google SecOps to improve threat detection.</li>
+                </ul>
+            </div>
+
+            <div class="job-card">
+                <h3>Werner Enterprises, Summer 2025 Scrum Master Intern</h3>
+                <h4>May 2025 - August 2025</h4>
+                <ul>
+                    <li>Acted as a Scrum Master-in-training, shadowing functional **Scrum and Kanban teams** (Salesforce, Information Security, Cloud Infrastructure, Networking).</li>
+                    <li>Led **Daily Standups** for numerous Kanban teams during Scrum Master absences.</li>
+                    <li>Explored use cases for conversational AI and led the design/implementation of an AI-driven outbound call workflow using **Moneiva**.</li>
+                </ul>
+            </div>
+
+            <div class="job-card">
+                <h3>Pierre’s TechHeads Inc, IT Intern (Offutt AFB)</h3>
+                <h4>February 2024 - August 2025</h4>
+                <ul>
+                    <li>Performed hardware/software troubleshooting and repair for end-users.</li>
+                    <li>Designed and implemented **small-scale networks and websites** for internal and client use.</li>
+                </ul>
+            </div>
+            
+            <div class="job-card">
+                <h3>T-Mobile, Mobile Expert</h3>
+                <h4>June 2021 - September 2023</h4>
+                <ul>
+                    <li>Delivered technical support and sales solutions for mobile devices and services.</li>
+                    <li>Recognized for top-tier **customer service** and troubleshooting expertise.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>🧪 Key Projects</h2>
+
+            <div class="project-card">
+                <h3>Personal Malware Analysis Lab (Cuckoo3 Sandbox)</h3>
+                <p>Designed and deployed a dynamic malware analysis environment using **Cuckoo3 Sandbox** within a nested virtualization setup.</p>
+                <ul>
+                    <li>Established a custom network configuration using a Linux bridge (**br0**), **netplan**, and **vmcloak-qemubridge** for secure VM communication.</li>
+                    <li>Configured the web UI with **Nginx** as a reverse proxy and **ASGI (Daphne)** as the application server.</li>
+                    <li>**Technologies Used:** VMware Workstation Pro, Ubuntu Linux, KVM/QEMU, Cuckoo3 Sandbox, Python, Nginx, Netplan, Bash, YAML.</li>
+                </ul>
+                <p class="tech-stack">**Core Technologies:** Cuckoo3 Sandbox, KVM/QEMU, Python, Nginx</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <h2>🎓 Education & Accomplishments</h2>
+            
+            <div class="entry">
+                <h3>University of Nebraska-Omaha</h3>
+                <p>August 2023 - Present</p>
+                <p>**B.S. in Cybersecurity** | Minor: Mathematics & Computer Science</p>
+                <p>Cumulative GPA: **3.787**</p>
+            </div>
+
+            <div class="entry">
+                <h3>Metropolitan Community College</h3>
+                <p>December 2020 - May 2023</p>
+                <p>Associate of Science, Computer Technology Transfer, Computer Science</p>
+            </div>
+            
+            <h3>Certifications</h3>
+            <div class="entry">
+                <p>**AZ-900 Microsoft Azure Fundamentals** (Acquired: July 2025)</p>
+            </div>
+
+            <h3>Extracurricular Accomplishments</h3>
+            <div class="entry">
+                <p><strong>UNO Esports - Student Leadership (Officer) - Game Manager</strong> (August 2024 - Present)</p>
+                <p><strong>UNO Black (Varsity) Valorant Team</strong> - 2025 Summit League Champions</p>
+                <p><strong>NULLify High School CTF Competition</strong> - 3rd place in 2020 HSCTF</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>📞 Contact Me</h2>
+            <p>I am eager to discuss opportunities where I can apply my cybersecurity knowledge and proven technical project experience. Feel free to reach out via email or phone.</p>
+            <div class="contact-details">
+                <p><strong>Email:</strong> <a href="mailto:ijaxrox@gmail.com">ijaxrox@gmail.com</a></p>
+                <p><strong>Phone:</strong> (531) 239 2843</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container" style="text-align: center; padding: 15px 0; background-color: var(--secondary-color); color: white; font-size: 0.9em;">
+            &copy; 2025 Jaxon Bruns. Built with HTML & CSS.
+        </div>
+    </footer>
+
+</body>
+</html>
