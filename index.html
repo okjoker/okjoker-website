@@ -31,6 +31,8 @@
             margin: 0 auto;
             padding: 20px 0;
         }
+        
+        /* --- HEADER & NAVIGATION STYLES --- */
         header {
             background-color: var(--secondary-color);
             color: white;
@@ -44,6 +46,15 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap; /* Allows wrapping for mobile */
+        }
+        header h1 {
+            font-size: 1.5em; 
+            margin: 0;
+        }
+        nav {
+            display: flex;
+            flex-wrap: wrap; 
         }
         nav a {
             color: white;
@@ -52,13 +63,14 @@
             padding: 5px 10px;
             transition: color 0.3s, background-color 0.3s;
             border-radius: 4px;
+            font-size: 0.95em; 
         }
         nav a:hover {
             color: var(--primary-color);
             background-color: rgba(255, 255, 255, 0.1);
         }
 
-        /* --- Section Styles --- */
+        /* --- SECTION STYLES --- */
         section {
             padding: 60px 0;
             border-bottom: 1px solid #E9ECEF;
@@ -197,17 +209,25 @@
             font-weight: bold;
         }
 
-        /* --- Responsive Design --- */
+        /* --- MOBILE RESPONSIVE STYLES --- */
         @media (max-width: 768px) {
             header .container {
-                flex-direction: column;
+                flex-direction: column; /* Stack header items vertically */
+                align-items: flex-start; 
+            }
+            header h1 {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 10px;
             }
             nav {
-                margin-top: 10px;
+                margin-top: 5px;
+                width: 100%; 
+                justify-content: space-around; 
             }
             nav a {
-                margin: 5px 10px;
-                display: block;
+                margin: 5px 5px;
+                font-size: 0.85em; 
             }
             #home h1 {
                 font-size: 2.5em;
@@ -217,6 +237,10 @@
             }
             h2 {
                 font-size: 2em;
+            }
+            .skills-table th, .skills-table td {
+                padding: 8px;
+                font-size: 0.9em;
             }
         }
     </style>
@@ -242,14 +266,14 @@
             <h1>Jaxon Bruns: Cybersecurity Analyst | Future-Focused IT Professional</h1>
             <p>Cybersecurity student at UNO with hands-on experience in threat analysis, security posture hardening, agile methodologies, and full-stack project deployment.</p>
             <a href="#experience" class="cta-button primary-cta">View My Experience</a>
-            <a href="https://www.linkedin.com/in/jaxonbruns/" target="_blank" class="cta-button secondary-cta">Connect on LinkedIn</a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" class="cta-button secondary-cta">Connect on LinkedIn</a>
         </div>
     </section>
 
     <section id="about">
         <div class="container">
             <h2>👤 About Me</h2>
-            <p class="goal">I am actively seeking employment that provides **real-world, hands-on experience** in the IT field, directly building upon my Cybersecurity studies at the University of Nebraska-Omaha. My approach is to bridge theoretical knowledge with practical application, focusing on security posture improvement and efficient, agile project delivery.</p>
+            <p class="goal">I am actively seeking employment that provides <strong>real-world, hands-on experience</strong> in the IT field, directly building upon my Cybersecurity studies at the University of Nebraska-Omaha. My approach is to bridge theoretical knowledge with practical application, focusing on security posture improvement and efficient, agile project delivery.</p>
 
             <h3>Key Skills Snapshot</h3>
             <table class="skills-table">
@@ -261,19 +285,19 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>**Cybersecurity**</td>
+                        <td><strong>Cybersecurity</strong></td>
                         <td>SIEM/SOAR Triage (Google SecOps), DLP Alerting, YARA-L Rules, Phishing/Malware Analysis, DMARC/SPF/DKIM, Malware Analysis (Cuckoo3 Sandbox), Network Configuration.</td>
                     </tr>
                     <tr>
-                        <td>**Development/Scripting**</td>
+                        <td><strong>Development/Scripting</strong></td>
                         <td>Python, Bash, YAML, Netplan, Nginx Configuration, Cloudflare API.</td>
                     </tr>
                     <tr>
-                        <td>**Infrastructure/Virtualization**</td>
+                        <td><strong>Infrastructure/Virtualization</strong></td>
                         <td>VMware Workstation Pro, Ubuntu Linux, KVM/QEMU, Nested Virtualization, systemd.</td>
                     </tr>
                     <tr>
-                        <td>**Agile/Leadership**</td>
+                        <td><strong>Agile/Leadership</strong></td>
                         <td>Scrum Master, Sprint Planning, Backlog Grooming, Daily Standups, Kanban, Conversational AI Design.</td>
                     </tr>
                 </tbody>
@@ -289,10 +313,10 @@
                 <h3>Werner Enterprises, Cybersecurity Analyst Intern</h3>
                 <h4>August 2025 - Present</h4>
                 <ul>
-                    <li>Analyzed user-submitted emails for **phishing, malware, and other malicious content**.</li>
-                    <li>Worked to harden the company's email security posture through the creation and refinement of **DMARC, SPF, and DKIM records** using **Python** and the **Cloudflare API**.</li>
-                    <li>Triaged and responded to alerts in **Google SecOps SOAR** utilizing **UDM queries** in the **SIEM**.</li>
-                    <li>Created and refined **YARA-L Rules** in Google SecOps to improve threat detection.</li>
+                    <li>Analyzed user-submitted emails for <strong>phishing, malware, and other malicious content</strong>.</li>
+                    <li>Worked to harden the company's email security posture through the creation and refinement of <strong>DMARC, SPF, and DKIM records</strong> using <strong>Python</strong> and the <strong>Cloudflare API</strong>.</li>
+                    <li>Triaged and responded to alerts in <strong>Google SecOps SOAR</strong> utilizing <strong>UDM queries</strong> in the <strong>SIEM</strong>.</li>
+                    <li>Created and refined <strong>YARA-L Rules</strong> in Google SecOps to improve threat detection.</li>
                 </ul>
             </div>
 
@@ -300,9 +324,9 @@
                 <h3>Werner Enterprises, Summer 2025 Scrum Master Intern</h3>
                 <h4>May 2025 - August 2025</h4>
                 <ul>
-                    <li>Acted as a Scrum Master-in-training, shadowing functional **Scrum and Kanban teams** (Salesforce, Information Security, Cloud Infrastructure, Networking).</li>
-                    <li>Led **Daily Standups** for numerous Kanban teams during Scrum Master absences.</li>
-                    <li>Explored use cases for conversational AI and led the design/implementation of an AI-driven outbound call workflow using **Moneiva**.</li>
+                    <li>Acted as a Scrum Master-in-training, shadowing functional <strong>Scrum and Kanban teams</strong> (Salesforce, Information Security, Cloud Infrastructure, Networking).</li>
+                    <li>Led <strong>Daily Standups</strong> for numerous Kanban teams during Scrum Master absences.</li>
+                    <li>Explored use cases for conversational AI and led the design/implementation of an AI-driven outbound call workflow using <strong>Moneiva</strong>.</li>
                 </ul>
             </div>
 
@@ -311,7 +335,7 @@
                 <h4>February 2024 - August 2025</h4>
                 <ul>
                     <li>Performed hardware/software troubleshooting and repair for end-users.</li>
-                    <li>Designed and implemented **small-scale networks and websites** for internal and client use.</li>
+                    <li>Designed and implemented <strong>small-scale networks and websites</strong> for internal and client use.</li>
                 </ul>
             </div>
             
@@ -320,7 +344,7 @@
                 <h4>June 2021 - September 2023</h4>
                 <ul>
                     <li>Delivered technical support and sales solutions for mobile devices and services.</li>
-                    <li>Recognized for top-tier **customer service** and troubleshooting expertise.</li>
+                    <li>Recognized for top-tier <strong>customer service</strong> and troubleshooting expertise.</li>
                 </ul>
             </div>
         </div>
@@ -332,13 +356,13 @@
 
             <div class="project-card">
                 <h3>Personal Malware Analysis Lab (Cuckoo3 Sandbox)</h3>
-                <p>Designed and deployed a dynamic malware analysis environment using **Cuckoo3 Sandbox** within a nested virtualization setup.</p>
+                <p>Designed and deployed a secure, isolated environment for dynamic malware analysis using <strong>Cuckoo3 Sandbox</strong> within a nested virtualization setup.</p>
                 <ul>
-                    <li>Established a custom network configuration using a Linux bridge (**br0**), **netplan**, and **vmcloak-qemubridge** for secure VM communication.</li>
-                    <li>Configured the web UI with **Nginx** as a reverse proxy and **ASGI (Daphne)** as the application server.</li>
-                    <li>**Technologies Used:** VMware Workstation Pro, Ubuntu Linux, KVM/QEMU, Cuckoo3 Sandbox, Python, Nginx, Netplan, Bash, YAML.</li>
+                    <li>Established a custom network configuration using a Linux bridge (<strong>br0</strong>), <strong>netplan</strong>, and <strong>vmcloak-qemubridge</strong> for secure VM communication.</li>
+                    <li>Configured the web UI with <strong>Nginx</strong> as a reverse proxy and <strong>ASGI (Daphne)</strong> as the application server.</li>
+                    <li><strong>Technologies Used:</strong> VMware Workstation Pro, Ubuntu Linux, KVM/QEMU, Cuckoo3 Sandbox, Python, Nginx, Netplan, Bash, YAML.</li>
                 </ul>
-                <p class="tech-stack">**Core Technologies:** Cuckoo3 Sandbox, KVM/QEMU, Python, Nginx</p>
+                <p class="tech-stack"><strong>Core Technologies:</strong> Cuckoo3 Sandbox, KVM/QEMU, Python, Nginx</p>
             </div>
         </div>
     </section>
@@ -350,8 +374,8 @@
             <div class="entry">
                 <h3>University of Nebraska-Omaha</h3>
                 <p>August 2023 - Present</p>
-                <p>**B.S. in Cybersecurity** | Minor: Mathematics & Computer Science</p>
-                <p>Cumulative GPA: **3.787**</p>
+                <p><strong>B.S. in Cybersecurity</strong> | Minor: Mathematics & Computer Science</p>
+                <p>Cumulative GPA: <strong>3.787</strong></p>
             </div>
 
             <div class="entry">
@@ -362,7 +386,7 @@
             
             <h3>Certifications</h3>
             <div class="entry">
-                <p>**AZ-900 Microsoft Azure Fundamentals** (Acquired: July 2025)</p>
+                <p><strong>AZ-900 Microsoft Azure Fundamentals</strong> (Acquired: July 2025)</p>
             </div>
 
             <h3>Extracurricular Accomplishments</h3>
