@@ -4,256 +4,212 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jaxon Bruns | Cybersecurity Professional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* --- General Styling & Reset --- */
         :root {
-            --primary-color: #007BFF;
-            --secondary-color: #343A40;
-            --light-bg: #F8F9FA;
-            --dark-text: #212529;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --primary: #3b82f6;
+            --primary-dark: #2563eb;
+            --bg-dark: #0f172a;
+            --bg-light: #f8fafc;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --white: #ffffff;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+            --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.1);
+            --radius: 12px;
         }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            color: var(--dark-text);
-            background-color: white;
+            color: var(--text-main);
+            background-color: var(--bg-light);
             scroll-behavior: smooth;
         }
-        /* FIX for Mobile Zoom/Overflow Issue */
-        html {
-            overflow-x: hidden;
-        }
-        
+
         .container {
             width: 90%;
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 20px 0;
         }
-        
-        /* --- HEADER & NAVIGATION STYLES --- */
+
+        /* --- Header --- */
         header {
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 15px 0;
-            position: sticky;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: var(--shadow);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding: 1rem 0;
         }
+
         header .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-        }
-        header h1 {
-            font-size: 1.5em; 
-            margin: 0;
-        }
-        nav {
-            display: flex;
-            flex-wrap: wrap; 
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-            padding: 5px 10px;
-            transition: color 0.3s, background-color 0.3s;
-            border-radius: 4px;
-            font-size: 0.95em; 
-        }
-        nav a:hover {
-            color: var(--primary-color);
-            background-color: rgba(255, 255, 255, 0.1);
         }
 
-        /* --- SECTION STYLES --- */
-        section {
-            padding: 60px 0;
-            border-bottom: 1px solid #E9ECEF;
+        header h1 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: var(--bg-dark);
         }
-        section:last-child {
-            border-bottom: none;
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            margin-left: 1.5rem;
+            font-size: 0.9rem;
+            transition: color 0.3s;
         }
-        h2 {
-            font-size: 2.5em;
-            color: var(--primary-color);
-            text-align: center;
-            margin-bottom: 40px;
-            position: relative;
-        }
-        h2::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background: var(--primary-color);
-            margin: 10px auto 0;
-            border-radius: 2px;
+
+        nav a:hover {
+            color: var(--primary);
         }
 
         /* --- Hero Section --- */
         #home {
-            background-color: var(--light-bg);
+            padding: 180px 0 100px;
+            background: radial-gradient(circle at top right, #eff6ff, #ffffff);
             text-align: center;
+        }
+
+        #home h2 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--bg-dark);
+            letter-spacing: -1.5px;
+        }
+
+        #home p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 14px 0 rgba(59, 130, 246, 0.39);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* --- Section Styling --- */
+        section {
             padding: 100px 0;
         }
-        #home h1 {
-            font-size: 3.5em;
-            margin-bottom: 10px;
-            color: var(--secondary-color);
-        }
-        #home p {
-            font-size: 1.5em;
-            color: #6C757D;
-            margin-bottom: 30px;
-        }
-        .cta-button {
-            display: inline-block;
-            padding: 12px 25px;
-            margin: 10px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-        .primary-cta {
-            background-color: var(--primary-color);
-            color: white;
-            border: 2px solid var(--primary-color);
-        }
-        .secondary-cta {
-            background-color: transparent;
-            color: var(--primary-color);
-            border: 2px solid var(--primary-color);
-        }
-        .cta-button:hover {
-            transform: translateY(-2px);
-            opacity: 0.9;
-        }
-        .secondary-cta:hover {
-            background-color: var(--primary-color);
-            color: white;
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--bg-dark);
         }
 
-        /* --- Experience & Project Cards --- */
-        .job-card, .project-card {
-            background-color: white;
-            padding: 25px;
-            margin-bottom: 30px;
-            border-left: 5px solid var(--primary-color);
-            box-shadow: var(--shadow);
-            border-radius: 8px;
-            transition: transform 0.3s;
+        /* --- Experience Cards --- */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
         }
-        .job-card:hover, .project-card:hover {
+
+        .card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .card:hover {
             transform: translateY(-5px);
-        }
-        .job-card h3, .project-card h3 {
-            color: var(--secondary-color);
-            margin-bottom: 5px;
-        }
-        .job-card h4, .project-card p.tech-stack {
-            color: var(--primary-color);
-            font-weight: normal;
-            margin-bottom: 15px;
-        }
-        .job-card ul {
-            padding-left: 20px;
+            box-shadow: var(--shadow-md);
         }
 
-        /* --- About Section / Skills --- */
-        #about p.goal {
-            font-style: italic;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 40px;
-            font-size: 1.1em;
-        }
-        
-        /* FIX: Table Wrapper for Mobile Scrolling */
-        .table-wrapper {
-            overflow-x: auto; /* Allows horizontal scrolling */
-            -webkit-overflow-scrolling: touch; /* Improves scrolling on iOS */
-            width: 100%;
-        }
-        .skills-table {
-            min-width: 500px; /* Ensure table is wide enough to scroll on mobile */
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        .skills-table th, .skills-table td {
-            border: 1px solid #DEE2E6;
-            padding: 12px;
-            text-align: left;
-        }
-        .skills-table th {
-            background-color: var(--primary-color);
-            color: white;
-            width: 30%;
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
         }
 
-        /* --- Education & Contact --- */
-        #education .entry {
-            margin-bottom: 20px;
-            padding-left: 15px;
-            border-left: 3px solid var(--secondary-color);
+        .card .meta {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            display: block;
         }
-        #education h3 {
-            margin-top: 0;
-            color: var(--primary-color);
+
+        .card ul {
+            list-style: none;
         }
-        #contact .contact-details {
-            text-align: center;
-            font-size: 1.2em;
+
+        .card ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-main);
         }
-        #contact .contact-details a {
-            color: var(--primary-color);
-            text-decoration: none;
+
+        .card ul li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
             font-weight: bold;
         }
 
-        /* --- MOBILE RESPONSIVE STYLES --- */
+        /* --- Skills (Tags) --- */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+        }
+
+        .skill-tag {
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid #e2e8f0;
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* --- Mobile --- */
         @media (max-width: 768px) {
-            header .container {
-                flex-direction: column; 
-                align-items: flex-start; 
-            }
-            header h1 {
-                width: 100%;
-                text-align: center;
-                margin-bottom: 10px;
-            }
-            nav {
-                margin-top: 5px;
-                width: 100%; 
-                justify-content: space-around; 
-            }
-            nav a {
-                margin: 5px 5px;
-                font-size: 0.85em; 
-            }
-            #home h1 {
-                font-size: 2.5em;
-            }
-            #home p {
-                font-size: 1.2em;
-            }
-            h2 {
-                font-size: 2em;
-            }
-            .skills-table th, .skills-table td {
-                padding: 8px;
-                font-size: 0.9em;
-            }
+            #home h2 { font-size: 2.5rem; }
+            header .container { flex-direction: column; gap: 1rem; }
+            nav a { margin: 0 0.75rem; }
+            .card { padding: 1.5rem; }
         }
     </style>
 </head>
@@ -264,7 +220,6 @@
             <h1>Jaxon Bruns</h1>
             <nav>
                 <a href="#home">Home</a>
-                <a href="#about">About</a>
                 <a href="#experience">Experience</a>
                 <a href="#projects">Projects</a>
                 <a href="#education">Education</a>
@@ -275,158 +230,90 @@
 
     <section id="home">
         <div class="container">
-            <h1>Jaxon Bruns: Cybersecurity Analyst | Future-Focused IT Professional</h1>
-            <p>Cybersecurity student at UNO with hands-on experience in threat analysis, security posture hardening, agile methodologies, and full-stack project deployment.</p>
-            <a href="#experience" class="cta-button primary-cta">View My Experience</a>
-            <a href="https://linkedin.com/in/yourprofile" target="_blank" class="cta-button secondary-cta">Connect on LinkedIn</a>
+            <h2>Building Resilient <br><span style="color: var(--primary)">Digital Defense</span></h2>
+            <p>Cybersecurity student at UNO with hands-on experience in threat analysis, SOAR automation, and infrastructure hardening.</p>
+            <a href="#experience" class="btn btn-primary">View Experience</a>
         </div>
     </section>
 
     <section id="about">
         <div class="container">
-            <h2>👤 About Me</h2>
-            <p class="goal">I am actively seeking employment that provides <strong>real-world, hands-on experience</strong> in the IT field, directly building upon my Cybersecurity studies at the University of Nebraska-Omaha. My approach is to bridge theoretical knowledge with practical application, focusing on security posture improvement and efficient, agile project delivery.</p>
-
-            <h3>Key Skills Snapshot</h3>
-            <div class="table-wrapper">
-                <table class="skills-table">
-                    <thead>
-                        <tr>
-                            <th>Category</th>
-                            <th>Skills</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Cybersecurity</strong></td>
-                            <td>SIEM/SOAR Triage (Google SecOps), DLP Alerting, YARA-L Rules, Phishing/Malware Analysis, DMARC/SPF/DKIM, Malware Analysis (Cuckoo3 Sandbox), Network Configuration.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Development/Scripting</strong></td>
-                            <td>Python, Bash, YAML, Netplan, Nginx Configuration, Cloudflare API.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Infrastructure/Virtualization</strong></td>
-                            <td>VMware Workstation Pro, Ubuntu Linux, KVM/QEMU, Nested Virtualization, systemd.</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Agile/Leadership</strong></td>
-                            <td>Scrum Master, Sprint Planning, Backlog Grooming, Daily Standups, Kanban, Conversational AI Design.</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <h2 class="section-title">Technical Expertise</h2>
+            <div class="skills-container">
+                <span class="skill-tag">Google SecOps SIEM/SOAR</span>
+                <span class="skill-tag">Python Automation</span>
+                <span class="skill-tag">YARA-L</span>
+                <span class="skill-tag">DMARC/SPF/DKIM</span>
+                <span class="skill-tag">Malware Analysis</span>
+                <span class="skill-tag">Cuckoo Sandbox</span>
+                <span class="skill-tag">KVM/QEMU</span>
+                <span class="skill-tag">Cloudflare API</span>
+                <span class="skill-tag">Linux Hardening</span>
+                <span class="skill-tag">Agile/Scrum</span>
             </div>
         </div>
     </section>
 
     <section id="experience">
         <div class="container">
-            <h2>💼 Professional Experience</h2>
+            <h2 class="section-title">Work History</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Cybersecurity Analyst Intern</h3>
+                    <span class="meta">Werner Enterprises | Aug 2025 - Present</span>
+                    <ul>
+                        <li>Triage and respond to alerts in Google SecOps SOAR using UDM queries.</li>
+                        <li>Hardened email security via DMARC, SPF, and DKIM automation using Python.</li>
+                        <li>Analyze phishing and malware submissions for malicious indicators.</li>
+                    </ul>
+                </div>
 
-            <div class="job-card">
-                <h3>Werner Enterprises, Cybersecurity Analyst Intern</h3>
-                <h4>August 2025 - Present</h4>
-                <ul>
-                    <li>Analyzed user-submitted emails for <strong>phishing, malware, and other malicious content</strong>.</li>
-                    <li>Worked to harden the company's email security posture through the creation and refinement of <strong>DMARC, SPF, and DKIM records</strong> using <strong>Python</strong> and the <strong>Cloudflare API</strong>.</li>
-                    <li>Triaged and responded to alerts in <strong>Google SecOps SOAR</strong> utilizing <strong>UDM queries</strong> in the <strong>SIEM</strong>.</li>
-                    <li>Created and refined <strong>YARA-L Rules</strong> in Google SecOps to improve threat detection.</li>
-                </ul>
+                <div class="card">
+                    <h3>Scrum Master Intern</h3>
+                    <span class="meta">Werner Enterprises | May 2025 - Aug 2025</span>
+                    <ul>
+                        <li>Led daily standups for Kanban teams across InfoSec and Infrastructure.</li>
+                        <li>Designed AI-driven outbound call workflows using Moneiva.</li>
+                    </ul>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <div class="job-card">
-                <h3>Werner Enterprises, Summer 2025 Scrum Master Intern</h3>
-                <h4>May 2025 - August 2025</h4>
+    <section id="projects" style="background: var(--white);">
+        <div class="container">
+            <h2 class="section-title">Featured Project</h2>
+            <div class="card" style="border-top: 4px solid var(--primary);">
+                <h3>Malware Analysis Lab (Cuckoo3)</h3>
+                <p style="margin-bottom: 1rem; color: var(--text-muted);">A fully isolated, nested virtualization environment for studying live malware behavior.</p>
+                <div class="skills-container" style="justify-content: flex-start; margin-bottom: 1.5rem;">
+                    <span class="skill-tag">VMware</span>
+                    <span class="skill-tag">Ubuntu</span>
+                    <span class="skill-tag">Nginx</span>
+                    <span class="skill-tag">Netplan</span>
+                </div>
                 <ul>
-                    <li>Acted as a Scrum Master-in-training, shadowing functional <strong>Scrum and Kanban teams</strong> (Salesforce, Information Security, Cloud Infrastructure, Networking).</li>
-                    <li>Led <strong>Daily Standups</strong> for numerous Kanban teams during Scrum Master absences.</li>
-                    <li>Explored use cases for conversational AI and led the design/implementation of an AI-driven outbound call workflow using <strong>Moneiva</strong>.</li>
-                </ul>
-            </div>
-
-            <div class="job-card">
-                <h3>Pierre’s TechHeads Inc, IT Intern (Offutt AFB)</h3>
-                <h4>February 2024 - August 2025</h4>
-                <ul>
-                    <li>Performed hardware/software troubleshooting and repair for end-users.</li>
-                    <li>Designed and implemented <strong>small-scale networks and websites</strong> for internal and client use.</li>
-                </ul>
-            </div>
-            
-            <div class="job-card">
-                <h3>T-Mobile, Mobile Expert</h3>
-                <h4>June 2021 - September 2023</h4>
-                <ul>
-                    <li>Delivered technical support and sales solutions for mobile devices and services.</li>
-                    <li>Recognized for top-tier <strong>customer service</strong> and troubleshooting expertise.</li>
+                    <li>Deployed Cuckoo3 on Ubuntu with KVM/QEMU nested virtualization.</li>
+                    <li>Configured Nginx reverse proxy and ASGI/Daphne application servers.</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <section id="projects">
+    <section id="contact" style="text-align: center;">
         <div class="container">
-            <h2>🧪 Key Projects</h2>
-
-            <div class="project-card">
-                <h3>Personal Malware Analysis Lab (Cuckoo3 Sandbox)</h3>
-                <p>Designed and deployed a secure, isolated environment for dynamic malware analysis using <strong>Cuckoo3 Sandbox</strong> within a nested virtualization setup.</p>
-                <ul>
-                    <li>Established a custom network configuration using a Linux bridge (<strong>br0</strong>), <strong>netplan</strong>, and <strong>vmcloak-qemubridge</strong> for secure VM communication.</li>
-                    <li>Configured the web UI with <strong>Nginx</strong> as a reverse proxy and <strong>ASGI (Daphne)</strong> as the application server.</li>
-                    <li><strong>Technologies Used:</strong> VMware Workstation Pro, Ubuntu Linux, KVM/QEMU, Cuckoo3 Sandbox, Python, Nginx, Netplan, Bash, YAML.</li>
-                </ul>
-                <p class="tech-stack"><strong>Core Technologies:</strong> Cuckoo3 Sandbox, KVM/QEMU, Python, Nginx</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="education">
-        <div class="container">
-            <h2>🎓 Education & Accomplishments</h2>
-            
-            <div class="entry">
-                <h3>University of Nebraska-Omaha</h3>
-                <p>August 2023 - Present</p>
-                <p><strong>B.S. in Cybersecurity</strong> | Minor: Mathematics & Computer Science</p>
-                <p>Cumulative GPA: <strong>3.787</strong></p>
-            </div>
-
-            <div class="entry">
-                <h3>Metropolitan Community College</h3>
-                <p>December 2020 - May 2023</p>
-                <p>Associate of Science, Computer Technology Transfer, Computer Science</p>
-            </div>
-            
-            <h3>Certifications</h3>
-            <div class="entry">
-                <p><strong>AZ-900 Microsoft Azure Fundamentals</strong> (Acquired: July 2025)</p>
-            </div>
-
-            <h3>Extracurricular Accomplishments</h3>
-            <div class="entry">
-                <p><strong>UNO Esports - Student Leadership (Officer) - Game Manager</strong> (August 2024 - Present)</p>
-                <p><strong>UNO Black (Varsity) Valorant Team</strong> - 2025 Summit League Champions</p>
-                <p><strong>NULLify High School CTF Competition</strong> - 3rd place in 2020 HSCTF</p>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="contact">
-        <div class="container">
-            <h2>📞 Contact Me</h2>
-            <p>I am eager to discuss opportunities where I can apply my cybersecurity knowledge and proven technical project experience. Feel free to reach out via email or phone.</p>
+            <h2 class="section-title">Let's Connect</h2>
+            <p style="margin-bottom: 2rem;">Seeking opportunities to apply my cybersecurity skills in real-world environments.</p>
             <div class="contact-details">
-                <p><strong>Email:</strong> <a href="mailto:ijaxrox@gmail.com">ijaxrox@gmail.com</a></p>
+                <p><strong>Email:</strong> <a href="mailto:ijaxrox@gmail.com" style="color: var(--primary);">ijaxrox@gmail.com</a></p>
                 <p><strong>Phone:</strong> (531) 239 2843</p>
             </div>
         </div>
     </section>
-    
-    <footer>
-        <div class="container" style="text-align: center; padding: 15px 0; background-color: var(--secondary-color); color: white; font-size: 0.9em;">
-            &copy; 2025 Jaxon Bruns. Built with HTML & CSS.
+
+    <footer style="padding: 3rem 0; background: var(--bg-dark); color: white; text-align: center;">
+        <div class="container">
+            <p>&copy; 2025 Jaxon Bruns</p>
         </div>
     </footer>
 
