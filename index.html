@@ -32,142 +32,33 @@
 
         .container { width: 90%; max-width: 1100px; margin: 0 auto; }
 
-        /* --- Header --- */
-        header {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(12px);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-            padding: 1rem 0;
-        }
-
+        header { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(12px); position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid rgba(0,0,0,0.05); padding: 1rem 0; }
         header .container { display: flex; justify-content: space-between; align-items: center; }
-
         header h1 { font-size: 1.25rem; font-weight: 700; color: var(--bg-dark); }
-
         nav { display: flex; align-items: center; }
-
-        nav a {
-            text-decoration: none;
-            color: var(--text-main);
-            font-weight: 500;
-            margin-left: 1.5rem;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
-
+        nav a { text-decoration: none; color: var(--text-main); font-weight: 500; margin-left: 1.5rem; font-size: 0.9rem; transition: color 0.3s; }
         nav a:hover { color: var(--primary); }
 
-        .btn-resume {
-            margin-left: 1.5rem;
-            padding: 0.5rem 1rem;
-            border: 1px solid var(--primary);
-            color: var(--primary);
-            border-radius: 6px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
+        #home { padding: 160px 0 80px; background: radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.05) 0%, rgba(255, 255, 255, 1) 90%); text-align: center; }
+        #home h2 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; color: var(--bg-dark); letter-spacing: -2px; }
+        #home p { font-size: 1.2rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 2.5rem; }
 
-        .btn-resume:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        /* --- Hero --- */
-        #home {
-            padding: 160px 0 80px;
-            background: radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.05) 0%, rgba(255, 255, 255, 1) 90%);
-            text-align: center;
-        }
-
-        #home h2 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            color: var(--bg-dark);
-            letter-spacing: -2px;
-        }
-
-        #home p {
-            font-size: 1.2rem;
-            color: var(--text-muted);
-            max-width: 800px;
-            margin: 0 auto 2.5rem;
-        }
-
-        .btn {
-            padding: 0.8rem 2rem;
-            border-radius: var(--radius);
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-            display: inline-block;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-            box-shadow: 0 4px 14px 0 rgba(59, 130, 246, 0.3);
-        }
-
-        .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); }
-
-        /* --- Global Section Styles --- */
-        section { padding: 80px 0; }
+        section { padding: 60px 0; }
         .section-title { font-size: 2rem; font-weight: 700; margin-bottom: 2.5rem; text-align: center; color: var(--bg-dark); }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
 
-        /* --- Cards --- */
-        .card {
-            background: var(--white);
-            padding: 2.5rem;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow-sm);
-            border: 1px solid rgba(0,0,0,0.05);
-            transition: 0.3s;
-        }
-
+        .card { background: var(--white); padding: 2.5rem; border-radius: var(--radius); box-shadow: var(--shadow-sm); border: 1px solid rgba(0,0,0,0.05); transition: 0.3s; height: 100%; }
         .card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
         .card h3 { font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--bg-dark); }
         .card .meta { color: var(--primary); font-weight: 600; font-size: 0.85rem; margin-bottom: 1rem; display: block; }
-        .card p, .card li { font-size: 0.95rem; color: var(--text-main); margin-bottom: 0.5rem; }
         .card ul { list-style: none; margin-top: 1rem; }
-        .card ul li::before { content: "▹"; color: var(--primary); padding-right: 8px; font-weight: bold; }
+        .card ul li { font-size: 0.9rem; margin-bottom: 0.6rem; position: relative; padding-left: 1.2rem; }
+        .card ul li::before { content: "▹"; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
 
-        /* --- Skills --- */
-        .skills-container { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; }
-        .skill-tag {
-            background: white;
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-        }
+        .skills-container { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; margin-bottom: 2rem; }
+        .skill-tag { background: white; padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.8rem; font-weight: 600; border: 1px solid #e2e8f0; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
 
-        /* --- Contact Badge --- */
-        .contact-card {
-            background: #f1f5f9;
-            padding: 1.5rem;
-            border-radius: var(--radius);
-            display: inline-block;
-            border: 1px solid #e2e8f0;
-        }
-
-        /* --- Mobile --- */
-        @media (max-width: 768px) {
-            header .container { flex-direction: column; gap: 0.5rem; }
-            nav a { margin: 0 0.5rem; font-size: 0.75rem; }
-            .btn-resume { display: none; }
-            #home { padding-top: 120px; }
-            .grid { grid-template-columns: 1fr; }
-        }
+        @media (max-width: 768px) { header .container { flex-direction: column; gap: 0.5rem; } nav a { margin: 0 0.5rem; font-size: 0.75rem; } .grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -177,19 +68,18 @@
             <h1>Jaxon Bruns</h1>
             <nav>
                 <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#internship">Cyber Intern</a>
                 <a href="#experience">Experience</a>
-                <a href="#projects">Projects</a>
                 <a href="#education">Education</a>
-                <a href="#contact" class="btn-resume">Contact</a>
             </nav>
         </div>
     </header>
 
     <section id="home">
         <div class="container">
-            <h2>Securing the <span style="color: var(--primary)">Future</span> <br>through IT Innovation.</h2>
-            <p>Cybersecurity student at the University of Nebraska-Omaha specializing in threat analysis, SOAR orchestration, and Agile Methodologies</p>
-            <a href="mailto:ijaxrox@gmail.com" class="btn btn-primary">Connect With Me</a>
+            <h2>Defending Networks <br>with <span style="color: var(--primary)">Precision.</span></h2>
+            <p>Cybersecurity student at the University of Nebraska-Omaha specializing in threat analysis, SOAR orchestration, and security engineering.</p>
         </div>
     </section>
 
@@ -201,64 +91,93 @@
                 <span class="skill-tag">Python (Automation)</span>
                 <span class="skill-tag">YARA-L Rules</span>
                 <span class="skill-tag">DMARC / SPF / DKIM</span>
-                <span class="skill-tag">Malware Analysis (Cuckoo3)</span>
+                <span class="skill-tag">Malware Analysis</span>
+                <span class="skill-tag">Digital Forensics</span>
                 <span class="skill-tag">Cloudflare API</span>
-                <span class="skill-tag">VMware Workstation Pro</span>
-                <span class="skill-tag">KVM / QEMU</span>
                 <span class="skill-tag">Agile / Scrum</span>
             </div>
         </div>
     </section>
 
-    <section id="experience">
+    <section id="internship">
         <div class="container">
-            <h2 class="section-title">Work History</h2>
+            <h2 class="section-title">Cybersecurity Analyst Intern: Werner Enterprises</h2>
             <div class="grid">
                 <div class="card">
-                    <h3>Cybersecurity Analyst Intern</h3>
-                    <span class="meta">Werner Enterprises | Aug 2025 – Present</span>
+                    <h3>Security Operations</h3>
+                    <span class="meta">Cybersecurity Analyst Intern | Aug 2025 – Present</span>
+                    <p>Daily operational throughput in a high-volume enterprise environment:</p>
                     <ul>
-                        <li>Triaged alerts in Google SecOps SOAR using UDM queries.</li>
-                        <li>Automated DMARC, SPF, and DKIM records via Cloudflare API.</li>
-                        <li>Reviewed user-submitted emails for phishing and malware.</li>
-                        <li>Developed custom YARA-L rules for threat detection.</li>
+                        <li><strong>PhishER & Malware Analysis:</strong> High-frequency triage of malicious email submissions.</li>
+                        <li><strong>DLP Monitoring:</strong> Daily response to Data Loss Prevention alerts.</li>
+                        <li><strong>SOAR & SIEM:</strong> Advanced case management and YARA-L rule creation in Google SecOps.</li>
+                        <li><strong>Google SecOps Development:</strong> Daily specialized development in UDM/SIEM workflows.</li>
                     </ul>
                 </div>
 
                 <div class="card">
-                    <h3>Scrum Master Intern</h3>
-                    <span class="meta">Werner Enterprises | May 2025 – Aug 2025</span>
+                    <h3>Forensic Discovery</h3>
+                    <span class="meta">SIEM</span>
+                    <p></p>
                     <ul>
-                        <li>Shadowed agile ceremonies for Salesforce, InfoSec, and Cloud teams.</li>
-                        <li>Managed daily standups and 2025 PI Planning sessions.</li>
-                        <li>Implemented outbound AI workflows using Moneiva.</li>
+                        <li><strong>Anomaly Detection:</strong> Discovered "Identity Recycling" behavior involving service account manipulation.</li>
+                        <li><strong>Event Correlation:</strong> Linked app_add/remove events to specific UUID patterns.</li>
+                        <li><strong>Detections:</strong> Engineered SecOps rules to detect admin self-targeting and unauthorized username changes.</li>
                     </ul>
                 </div>
 
                 <div class="card">
-                    <h3>IT Intern</h3>
-                    <span class="meta">Pierre’s TechHeads Inc (Offutt AFB) | Feb 2024 – Aug 2025</span>
+                    <h3>Cloudflare Automation Suite</h3>
+                    <span class="meta">Python & REST API Engineering</span>
                     <ul>
-                        <li>Hardware/software troubleshooting and repair for end users.</li>
-                        <li>Designed small-scale network architectures for client use.</li>
+                        <li><strong>SPF/DMARC Cleanup:</strong> Scripted bulk identification and remediation of security records.</li>
+                        <li><strong>Load Balancer Hygiene:</strong> Automated audit tool to decommission unused pools.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>WAF Log ETL & Enrichment</h3>
+                    <span class="meta">GraphQL & Data Analysis</span>
+                    <ul>
+                        <li><strong>API Orchestration:</strong> Recursive ingestion tool to bypass Cloudflare's 1,000-log limit.</li>
+                        <li><strong>Data Enrichment:</strong> Automated lookup maps to translate OWASP rule IDs into descriptions.</li>
+                        <li><strong>WAF Tuning:</strong> JSON to CSV transformation for ASN/IP threat analysis.</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="projects" style="background: var(--white);">
+    <section id="experience" style="background: var(--white);">
         <div class="container">
-            <h2 class="section-title">Malware Lab Project</h2>
-            <div class="card" style="border-top: 4px solid var(--primary);">
-                <h3>Automated Malware Sandbox (Cuckoo3)</h3>
-                <span class="meta">Stack: Cuckoo3, KVM/QEMU, Python, Ubuntu Linux, Netplan</span>
-                <p>Engineered a dynamic analysis lab within a nested virtualization environment to study live malware behavior.</p>
-                <ul>
-                    <li>Configured KVM/QEMU nesting by disabling Windows Host features (Hyper-V/Core Isolation).</li>
-                    <li>Developed custom network bridges (br0) for isolated VM communication.</li>
-                    <li>Built systemd services for automated result server binding.</li>
-                </ul>
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Scrum Master Intern</h3>
+                    <span class="meta">Werner Enterprises | May 2025 – Aug 2025</span>
+                    <ul>
+                        <li><strong>Agile Ceremonies:</strong> Facilitated ceremonies across Salesforce, InfoSec, and Networking domains.</li>
+                        <li><strong>PI Planning:</strong> Assisted in the planning of the 3rd PI Planning Session of 2025.</li>
+                        <li><strong>Team Facilitation:</strong> Led daily standups for Kanban teams and identified workflow blockers.</li>
+                        <li><strong>AI Initiative:</strong> Designed and implemented AI-driven workflows.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>IT Intern</h3>
+                    <span class="meta">Pierre’s TechHeads Inc (Offutt AFB) | 2024 – 2025</span>
+                    <ul>
+                        <li>Performed hardware/software troubleshooting and repair for end users.</li>
+                        <li>Designed and implemented small-scale networks and websites.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Mobile Expert</h3>
+                    <span class="meta">T-Mobile | 2021 – 2023</span>
+                    <ul>
+                        <li>Delivered technical support and sales solutions for mobile devices.</li>
+                        <li>Recognized for top-tier customer service and troubleshooting expertise.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -271,21 +190,26 @@
                     <h3>University of Nebraska-Omaha</h3>
                     <span class="meta">B.S. in Cybersecurity | 2023 – May 2026</span>
                     <p><strong>3.787 Cumulative GPA</strong></p>
+                    <p>Concentration: Cyber Operations</p>
                     <p>Minor: Mathematics & Computer Science</p>
                 </div>
-
                 <div class="card">
                     <h3>Metropolitan Community College</h3>
                     <span class="meta">Associate of Science | 2020 – 2023</span>
                     <p>Computer Science</p>
                 </div>
-                
                 <div class="card">
                     <h3>Azure Fundamentals (AZ-900)</h3>
                     <span class="meta">Microsoft Certified | July 2025</span>
                     <p>Credential ID: 86147A341BD11C2B</p>
                 </div>
-
+                <div class="card">
+                    <h3>National Cyber League (NCL)</h3>
+                    <span class="meta">Team CTF (Nov 8-9, 2025)</span>
+                    <p>Competed in the <strong>Experienced Students Bracket</strong> with NULLify UNOmaha.</p>
+                    <p>• <strong>Overall Rank:</strong> 49th out of 500+ schools (Top ~10%).</p>
+                    <p>• <strong>Team Game Score:</strong> 43rd.</p>
+                </div>
                 <div class="card">
                     <h3>Esports & CTF Leadership</h3>
                     <span class="meta">Leadership & Competition</span>
@@ -297,20 +221,10 @@
         </div>
     </section>
 
-    <section id="contact" style="text-align: center;">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <p style="margin-bottom: 2rem; color: var(--text-muted);">Open to discussing cybersecurity roles and technical projects.</p>
-            <div class="contact-card">
-                <p><strong>Email:</strong> <a href="mailto:ijaxrox@gmail.com" style="color: var(--primary); text-decoration: none;">ijaxrox@gmail.com</a></p>
-                <p><strong>Phone:</strong> (531) 239 2843</p>
-            </div>
-        </div>
-    </section>
-
     <footer style="padding: 4rem 0; background: var(--bg-dark); color: white; text-align: center;">
         <div class="container">
-            <p>&copy; 2025 Jaxon Bruns</p>
+            <p>Jaxon Bruns | <a href="mailto:ijaxrox@gmail.com" style="color: var(--primary); text-decoration: none;">ijaxrox@gmail.com</a> | (531) 239 2843</p>
+            <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.6;">&copy; 2025 Professional Portfolio</p>
         </div>
     </footer>
 
